@@ -1,165 +1,88 @@
-const API_URL = "http://13.77.161.105:3000/api/Fund";
-/*
-const tableData = JSON.parse(getAPIFund());
+// const API_URL = "http://13.77.161.105:3000/api/Fund";
 
-async function getAPIFund() {
-  let result;
-  
-  await fetch(API_URL)
-  .then(res => res.json())
-  .then(data => {
-    result = data;
-  })
-  .catch(error => error);
-
-  console.log(result);
-  return result;
-}*/
-
-const tableData = JSON.parse(
-  `[{
-  "id": 0,
-  "key": 0,
-  "startedAt": "2017-08-20",
-  "expiredAt": "2019-80-20",
-  "investFundKey": "부동산투자신탁1",
-  "initialPrice": "1,000,000",
-  "price": "1,060,000",
-  "incRate": "+6.00%",
-  "initialTotalPrice": "172,000,000",
-  "totalPrice": "182,900,780",
-  "requestAt": "2017-08-24, 14:37",
-  "requestType": "매수"
-}, {
-  "id": 1,
-  "key": 1,
-  "startedAt": "2017-08-20",
-  "expiredAt": "2019-80-20",
-  "investFundKey": "부동산투자신탁1",
-  "initialPrice": "1,000,000",
-  "price": "1,060,000",
-  "incRate": "+6.00%",
-  "initialTotalPrice": "172,000,000",
-  "totalPrice": "182,900,780",
-  "requestAt": "2017-08-24, 14:37",
-  "requestType": "매수"
-}, {
-  "id": 2,
-  "key": 2,
-  "startedAt": "2017-08-20",
-  "expiredAt": "2019-80-20",
-  "investFundKey": "부동산투자신탁1",
-  "initialPrice": "1,000,000",
-  "price": "1,060,000",
-  "incRate": "+6.00%",
-  "initialTotalPrice": "172,000,000",
-  "totalPrice": "182,900,780",
-  "requestAt": "2017-08-24, 14:37",
-  "requestType": "매수"
-}, {
-  "id": 3,
-  "key": 3,
-  "startedAt": "2017-08-20",
-  "expiredAt": "2019-80-20",
-  "investFundKey": "부동산투자신탁1",
-  "initialPrice": "1,000,000",
-  "price": "1,060,000",
-  "incRate": "+6.00%",
-  "initialTotalPrice": "172,000,000",
-  "totalPrice": "182,900,780",
-  "requestAt": "2017-08-24, 14:37",
-  "requestType": "매수"
-}, {
-  "id": 4,
-  "key": 4,
-  "startedAt": "2017-08-20",
-  "expiredAt": "2019-80-20",
-  "investFundKey": "부동산투자신탁1",
-  "initialPrice": "1,000,000",
-  "price": "1,060,000",
-  "incRate": "+6.00%",
-  "initialTotalPrice": "172,000,000",
-  "totalPrice": "182,900,780",
-  "requestAt": "2017-08-24, 14:37",
-  "requestType": "매수"
-}, {
-  "id": 5,
-  "key": 5,
-  "startedAt": "2017-08-20",
-  "expiredAt": "2019-80-20",
-  "investFundKey": "부동산투자신탁1",
-  "initialPrice": "1,000,000",
-  "price": "1,060,000",
-  "incRate": "+6.00%",
-  "initialTotalPrice": "172,000,000",
-  "totalPrice": "182,900,780",
-  "requestAt": "2017-08-24, 14:37",
-  "requestType": "매수"
-}, {
-  "id": 6,
-  "key": 6,
-  "startedAt": "2017-08-20",
-  "expiredAt": "2019-80-20",
-  "investFundKey": "부동산투자신탁1",
-  "initialPrice": "1,000,000",
-  "price": "1,060,000",
-  "incRate": "+6.00%",
-  "initialTotalPrice": "172,000,000",
-  "totalPrice": "182,900,780",
-  "requestAt": "2017-08-24, 14:37",
-  "requestType": "매수"
-}, {
-  "id": 7,
-  "key": 7,
-  "startedAt": "2017-08-20",
-  "expiredAt": "2019-80-20",
-  "investFundKey": "부동산투자신탁1",
-  "initialPrice": "1,000,000",
-  "price": "1,060,000",
-  "incRate": "+6.00%",
-  "initialTotalPrice": "172,000,000",
-  "totalPrice": "182,900,780",
-  "requestAt": "2017-08-24, 14:37",
-  "requestType": "매수"
-}, {
-  "id": 8,
-  "key": 8,
-  "startedAt": "2017-08-20",
-  "expiredAt": "2019-80-20",
-  "investFundKey": "부동산투자신탁1",
-  "initialPrice": "1,000,000",
-  "price": "1,060,000",
-  "incRate": "+6.00%",
-  "initialTotalPrice": "172,000,000",
-  "totalPrice": "182,900,780",
-  "requestAt": "2017-08-24, 14:37",
-  "requestType": "매수"
-}, {
-  "id": 9,
-  "key": 9,
-  "startedAt": "2017-08-20",
-  "expiredAt": "2019-80-20",
-  "investFundKey": "부동산투자신탁1",
-  "initialPrice": "1,000,000",
-  "price": "1,060,000",
-  "incRate": "+6.00%",
-  "initialTotalPrice": "172,000,000",
-  "totalPrice": "182,900,780",
-  "requestAt": "2017-08-24, 14:37",
-  "requestType": "매수"
-}]`
-);
+// let tableData = 
+//   [{
+//     "fundNameKey": "치킨프렌차이즈 계모임",
+//     "initialTotalPrice": "150,000",
+//     "currentTotalPrice": "1,200,000",
+//     "startedAt": "2017-09-01",
+//     "expiredAt": "2018-09-01",
+//   },
+//   {
+//     "id": 1,
+//     "key": 1,
+//     "fundNameKey": "전주시 어머니회",
+//     "initialTotalPrice": "50,000",
+//     "currentTotalPrice": "800,000",
+//     "startedAt": "2016-09-01",
+//     "expiredAt": "2020-09-01",
+//   },
+//   {
+//     "id": 2,
+//     "key": 2,
+//     "fundNameKey": "전주이씨 종친회",
+//     "initialTotalPrice": "500,000",
+//     "currentTotalPrice": "5,800,000",
+//     "startedAt": "2010-10-01",
+//     "expiredAt": "2020-10-01",
+//   },
+//   {
+//     "id": 3,
+//     "key": 3,
+//     "fundNameKey": "ect.",
+//     "initialTotalPrice": "150,000",
+//     "currentTotalPrice": "1,200,000",
+//     "startedAt": "2017-09-01",
+//     "expiredAt": "2018-09-01",
+//   },
+//   {
+//     "id": 4,
+//     "key": 4,
+//     "fundNameKey": "ect.",
+//     "initialTotalPrice": "150,000",
+//     "currentTotalPrice": "1,200,000",
+//     "startedAt": "2017-09-01",
+//     "expiredAt": "2018-09-01",
+//   },
+//   {
+//     "id": 5,
+//     "key": 5,
+//     "fundNameKey": "ect.",
+//     "initialTotalPrice": "150,000",
+//     "currentTotalPrice": "1,200,000",
+//     "startedAt": "2017-09-01",
+//     "expiredAt": "2018-09-01",
+//   },
+//   {
+//     "id": 6,
+//     "key": 6,
+//     "fundNameKey": "ect.",
+//     "initialTotalPrice": "150,000",
+//     "currentTotalPrice": "1,200,000",
+//     "startedAt": "2017-09-01",
+//     "expiredAt": "2018-09-01",
+//   },
+//   {
+//     "id": 7,
+//     "key": 7,
+//     "fundNameKey": "ect.",
+//     "initialTotalPrice": "150,000",
+//     "currentTotalPrice": "1,200,000",
+//     "startedAt": "2017-09-01",
+//     "expiredAt": "2018-09-01",
+//   }];
 
 const sortOption = {};
 class fakeData {
-  constructor(size) {
-    this.size = size || 2000;
+  constructor(data, size) {
+    this.tableData = data;
+    this.size = size || this.tableData.length || 2000;
     this.datas = [];
     this.sortKey = null;
     this.sortDir = null;
   }
   dataModel(index) {
-    return tableData[index];
+    return this.tableData[index];
   }
   getObjectAt(index) {
     if (index < 0 || index > this.size) {

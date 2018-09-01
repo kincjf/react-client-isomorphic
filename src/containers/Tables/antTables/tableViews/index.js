@@ -1,11 +1,13 @@
-import FundView from './FundView';
-import TransactionView from './TransactionView';
-import NotTransView from './NotTransView';
-import TotalView from './TotalView';
+import simpleView from './simpleView';
+import meetingView from './meetingView';
+import transView from './transView';
+import unsigndView from './unsigndView';
+import totalView from './totalView';
 
 export {
-  FundView,
-  TransactionView,
-  NotTransView,
-  TotalView
+  simpleView,
+  meetingView,
+  transView,
+  unsigndView,
+  totalView
 };

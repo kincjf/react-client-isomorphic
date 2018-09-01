@@ -3,23 +3,13 @@ import { Row, Col } from 'antd';
 import Async from '../../../helpers/asyncComponent';
 import basicStyle from '../../../settings/basicStyle';
 import ChartWrapper from '../chart.style';
+import IntlMessages from '../../../components/utility/intlMessages';
+import Button, { ButtonGroup } from '../../../components/uielements/button';
+import Box from '../../../components/utility/box';
+import PageHeader from '../../../components/utility/pageHeader';
+import ContentHolder from '../../../components/utility/contentHolder';
+import LayoutWrapper from '../../../components/utility/layoutWrapper.js';
 
-const Doughnut = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-Doughnut" */ './components/doughnut/doughnut')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
-const DynamicDoughnut = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-dynamic-doughnut" */ './components/dynamic-doughnut/dynamic-doughnut')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
 const Pie = props => (
   <ChartWrapper>
     <Async
@@ -28,195 +18,56 @@ const Pie = props => (
     />
   </ChartWrapper>
 );
-const Line = props => (
+const PieTwo = props => (
   <ChartWrapper>
     <Async
-      load={import(/* webpackChunkName: "ReactChart2-line" */ './components/line/line')}
+      load={import(/* webpackChunkName: "ReactChart2-pie" */ './components/pie/pieTwo')}
       componentProps={props}
     />
   </ChartWrapper>
 );
-const Bar = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-bar" */ './components/bar/bar')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
-const HorizontalBar = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-horizontalBar" */ './components/horizontalBar/horizontalBar')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
-const Radar = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-radar" */ './components/radar/radar')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
-const Polar = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-polar" */ './components/polar/polar')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
-const Bubble = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-bubble" */ './components/bubble/bubble')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
-const MixedData = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-mix" */ './components/mix/mix')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
-const RandomizedDataLine = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-randomizedLine" */ './components/randomizedLine/randomizedLine')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
-const PageHeader = props => (
-  <Async
-    load={import(/* webpackChunkName: "ReactChart2-pageHeader" */ '../../../components/utility/pageHeader')}
-    componentProps={props}
-  />
-);
-const Box = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-box" */ '../../../components/utility/box')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
-const LayoutWrapper = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-layoutWrapper" */ '../../../components/utility/layoutWrapper.js')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
-const ContentHolder = props => (
-  <ChartWrapper>
-    <Async
-      load={import(/* webpackChunkName: "ReactChart2-contentHolder" */ '../../../components/utility/contentHolder')}
-      componentProps={props}
-    />
-  </ChartWrapper>
-);
+
 export default class extends Component {
   render() {
     const { rowStyle, colStyle, gutter } = basicStyle;
     return (
       <LayoutWrapper className="isoMapPage">
-        <PageHeader>React Charts 2</PageHeader>
+        <PageHeader>
+          <IntlMessages id="해맑은 장사꾼(계모임)" />
+        </PageHeader>
+
         <Row style={rowStyle} gutter={gutter} justify="start">
-          <Col md={12} xs={24} style={colStyle}>
-            <Box title="Doughnut">
+          <Col md={24} sm={24} xs={24} style={colStyle}>
+            <Box title="개요" subtitle={<IntlMessages id="자영업, 전주시" />}>
               <ContentHolder>
-                <Doughnut />
+                <IntlMessages id="전주시 소상공인들의 휴식처입니다." />
               </ContentHolder>
-            </Box>
-          </Col>
-          <Col md={12} xs={24} style={colStyle}>
-            <Box title="Dynamicly refreshed Doughnut">
               <ContentHolder>
-                <DynamicDoughnut />
+                <Button type="primary" style={{margin: '20px 8px 8px 0'}} >
+                    {<IntlMessages id="가입하기" />}
+                </Button>
               </ContentHolder>
             </Box>
           </Col>
         </Row>
+
         <Row style={rowStyle} gutter={gutter} justify="start">
           <Col md={12} xs={24} style={colStyle}>
-            <Box title="Pie">
+            <Box title="모임자 가입기간 분포">
               <ContentHolder>
                 <Pie />
               </ContentHolder>
             </Box>
           </Col>
           <Col md={12} xs={24} style={colStyle}>
-            <Box title="Line">
+            <Box title="모임자 연령분포">
               <ContentHolder>
-                <Line />
+                <PieTwo />
               </ContentHolder>
             </Box>
           </Col>
         </Row>
-        <Row style={rowStyle} gutter={gutter} justify="start">
-          <Col md={12} xs={24} style={colStyle}>
-            <Box title="Bar (custom size)">
-              <ContentHolder>
-                <Bar />
-              </ContentHolder>
-            </Box>
-          </Col>
-          <Col md={12} xs={24} style={colStyle}>
-            <Box title="Horizontal Bar Example">
-              <ContentHolder>
-                <HorizontalBar />
-              </ContentHolder>
-            </Box>
-          </Col>
-        </Row>
-        <Row style={rowStyle} gutter={gutter} justify="start">
-          <Col md={12} xs={24} style={colStyle}>
-            <Box title="Radar">
-              <ContentHolder>
-                <Radar />
-              </ContentHolder>
-            </Box>
-          </Col>
-          <Col md={12} xs={24} style={colStyle}>
-            <Box title="Polar">
-              <ContentHolder>
-                <Polar />
-              </ContentHolder>
-            </Box>
-          </Col>
-        </Row>
-        <Row style={rowStyle} gutter={gutter} justify="start">
-          <Col md={12} xs={24} style={colStyle}>
-            <Box title="Bubble">
-              <ContentHolder>
-                <Bubble />
-              </ContentHolder>
-            </Box>
-          </Col>
-          <Col md={12} xs={24} style={colStyle}>
-            <Box title="Mixed Data">
-              <ContentHolder>
-                <MixedData />
-              </ContentHolder>
-            </Box>
-          </Col>
-        </Row>
-        <Row style={rowStyle} gutter={gutter} justify="start">
-          <Col md={12} xs={24} style={colStyle}>
-            <Box title="Random Animated">
-              <ContentHolder>
-                <RandomizedDataLine />
-              </ContentHolder>
-            </Box>
-          </Col>
-        </Row>
+
       </LayoutWrapper>
     );
   }

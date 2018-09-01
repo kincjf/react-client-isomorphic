@@ -3,32 +3,43 @@ import Tabs, { TabPane } from '../../../components/uielements/tabs';
 import LayoutContentWrapper from '../../../components/utility/layoutWrapper.js';
 import TableDemoStyle from './demo.style';
 import fakeData from '../fakeData';
+import transactionData from '../transactionData';
+import unsigndData from '../unsigndData';
 import { tableinfos } from './configs';
 import * as TableViews from './tableViews/';
 
-const dataList = new fakeData(10);
+const dataList = new fakeData();
+const transList = new transactionData();
+const unsigndList = new unsigndData();
 
 export default class AntTable extends Component {
   renderTable(tableInfo) {
     let Component;
+    let TableSet;
+    
     switch (tableInfo.value) {
-      case 'FundView':
-        Component = TableViews.FundView;
+      case 'meetingView':
+        Component = TableViews.meetingView;
+        TableSet = <Component tableInfo={tableInfo} dataList={dataList} />;
         break;
-      case 'TranscationView':
-        Component = TableViews.TransactionView;
+      case 'transView':
+        Component = TableViews.transView;
+        TableSet = <Component tableInfo={tableInfo} dataList={transList} />;
         break;
-      case 'NotTransView':
-        Component = TableViews.NotTransView;
+      case 'unsigndView':
+        Component = TableViews.unsigndView;
+        TableSet = <Component tableInfo={tableInfo} dataList={unsigndList} />;
         break;
-      case 'TotalView':
-        Component = TableViews.TotalView;
+      case 'totalView':
+        Component = TableViews.totalView;
+        TableSet = <Component />;
         break;
       default:
-        Component = TableViews.FundView;
+        Component = TableViews.meetingView;
+        TableSet = <Component tableInfo={tableInfo} dataList={dataList} />;
         break;
     }
-    return <Component tableInfo={tableInfo} dataList={dataList} />;
+    return TableSet;
   }
   render() {
     return (

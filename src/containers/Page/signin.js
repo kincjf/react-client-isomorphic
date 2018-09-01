@@ -46,38 +46,38 @@ class SignIn extends Component {
           <div className="isoLoginContent">
             <div className="isoLogoWrapper">
               <Link to="/dashboard">
-                <IntlMessages id="page.signInTitle" />
+                <IntlMessages id="아마곗돈" />
               </Link>
             </div>
 
             <div className="isoSignInForm">
               <div className="isoInputWrapper">
-                <Input size="large" placeholder="Username" />
+                <Input size="large" placeholder="이메일 또는 전화번호" />
               </div>
 
               <div className="isoInputWrapper">
-                <Input size="large" type="password" placeholder="Password" />
+                <Input size="large" type="password" placeholder="비밀번호" />
               </div>
 
               <div className="isoInputWrapper isoLeftRightComponent">
                 <Checkbox>
-                  <IntlMessages id="page.signInRememberMe" />
+                  <IntlMessages id="로그인 상태 유지" />
                 </Checkbox>
                 <Button type="primary" onClick={this.handleLogin}>
-                  <IntlMessages id="page.signInButton" />
+                  <IntlMessages id="로그인" />
                 </Button>
               </div>
 
               <p className="isoHelperText">
-                <IntlMessages id="page.signInPreview" />
+                <IntlMessages id="데모 사용시, 로그인을 눌러주세요." />
               </p>
 
               <div className="isoInputWrapper isoOtherLogin">
                 <Button onClick={this.handleLogin} type="primary btnFacebook">
-                  <IntlMessages id="page.signInFacebook" />
+                  <IntlMessages id="Facebook 로 로그인" />
                 </Button>
                 <Button onClick={this.handleLogin} type="primary btnGooglePlus">
-                  <IntlMessages id="page.signInGooglePlus" />
+                  <IntlMessages id="Google+ 로 로그인" />
                 </Button>
 
                 {Auth0.isValid && (
@@ -95,10 +95,10 @@ class SignIn extends Component {
               </div>
               <div className="isoCenterComponent isoHelperWrapper">
                 <Link to="/forgotpassword" className="isoForgotPass">
-                  <IntlMessages id="page.signInForgotPass" />
+                  <IntlMessages id="비밀번호 찾기" />
                 </Link>
                 <Link to="/signup">
-                  <IntlMessages id="page.signInCreateAccount" />
+                  <IntlMessages id="계정 만들기" />
                 </Link>
               </div>
             </div>

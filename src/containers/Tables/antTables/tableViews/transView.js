@@ -5,13 +5,14 @@ export default class extends Component {
   render() {
     const dataSource = this.props.dataSource || this.props.dataList.getAll();
     const columns = this.props.columns || this.props.tableInfo.columns;
-    return (
-      <TableWrapper
+
+      return(
+        <TableWrapper
         pagination={false}
         columns={columns}
         dataSource={dataSource}
-        className="NotTransactionTable"
+        className="transTable"
       />
-    );
+      );
   }
 }

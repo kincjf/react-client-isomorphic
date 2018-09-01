@@ -3,18 +3,20 @@ import { SaleWidgetWrapper } from './style';
 
 export default class extends Component {
   render() {
-    const { fontColor, label, price, details } = this.props;
+    const { fontColor, label, title, details, date } = this.props;
 
-    const textColor = {
-      color: fontColor
+    const textStyle = {
+      color: fontColor,
+      fontWeight: "bold"
     };
 
     return (
       <SaleWidgetWrapper className="isoSaleWidget">
         <h3 className="isoSaleLabel">{label}</h3>
-        <span className="isoSalePrice" style={textColor}>
-          {price}
+        <span className="isoSalePrice" style={textStyle}>
+          {title}
         </span>
+        <p>{date}</p>
         <p className="isoSaleDetails">{details}</p>
       </SaleWidgetWrapper>
     );

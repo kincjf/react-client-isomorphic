@@ -1,357 +1,52 @@
-import getDevSidebar from '../../customApp/sidebar';
-const options = [
-  {
-    key: 'mailbox',
-    label: 'sidebar.email',
-    leftIcon: 'ion-android-mail',
-  },
-  {
-    key: 'chat',
-    label: 'sidebar.chat',
-    leftIcon: 'ion-chatbubbles',
-  },
-  {
-    key: 'ecommerce',
-    label: 'sidebar.ecommerce',
-    leftIcon: 'ion-bag',
-    children: [
-      {
-        key: 'shop',
-        label: 'sidebar.shop',
-      },
-      {
-        key: 'cart',
-        label: 'sidebar.cart',
-      },
-      {
-        key: 'checkout',
-        label: 'sidebar.checkout',
-      },
-      {
-        key: 'card',
-        label: 'sidebar.cards',
-      },
-    ],
-  },
-  {
-    key: 'maps',
-    label: 'sidebar.maps',
-    leftIcon: 'ion-map',
-    children: [
-      {
-        key: 'googlemap',
-        label: 'sidebar.googleMap',
-      },
-      {
-        key: 'leafletmap',
-        label: 'sidebar.leafletMap',
-      },
-    ],
-  },
-  {
-    key: 'invoice',
-    label: 'sidebar.invoice',
-    leftIcon: 'ion-clipboard',
-  },
-  {
-    key: 'youtubeSearch',
-    label: 'sidebar.youtubeSearch',
-    leftIcon: 'ion-social-youtube',
-  },
-  {
-    key: 'calendar',
-    label: 'sidebar.calendar',
-    leftIcon: 'ion-calendar',
-  },
-  {
-    key: 'notes',
-    label: 'sidebar.notes',
-    leftIcon: 'ion-ios-paper',
-  },
-  {
-    key: 'todo',
-    label: 'sidebar.todos',
-    leftIcon: 'ion-android-checkbox-outline',
-  },
-  {
-    key: 'firestorecrud',
-    label: 'sidebar.firestorecrud',
-    leftIcon: 'ion-fireball',
 
-    children: [
-      {
-        key: 'articles',
-        label: 'sidebar.firestorecrudarticle',
+const options = [
+    {
+        key: 'dashboard',
+        label: '메인 화면',
+        leftIcon: 'ion-alert',
       },
-      {
-        key: 'investors',
-        label: 'sidebar.firestorecrudinvestor',
-      },
-    ],
-  },
-  {
-    key: 'contacts',
-    label: 'sidebar.contacts',
-    leftIcon: 'ion-android-person-add',
-  },
-  {
-    key: 'shuffle',
-    label: 'sidebar.shuffle',
-    leftIcon: 'ion-grid',
-  },
   {
     key: 'charts',
-    label: 'sidebar.charts',
+    label: '모임 찾기',
     leftIcon: 'ion-arrow-graph-up-right',
     children: [
       {
-        key: 'googleChart',
-        label: 'sidebar.googleCharts',
-      },
-      {
-        key: 'reecharts',
-        label: 'sidebar.recharts',
-      },
-      {
-        key: 'reactVis',
-        label: 'sidebar.reactVis',
-      },
-      {
         key: 'reactChart2',
-        label: 'sidebar.reactChart2',
+        label: '해맑은 장사꾼(계모임)',
+      },{
+        key: 'reactChart3',
+        label: '녹색 어머니 연합회(단체)',
+      },{
+        key: 'reactChart4',
+        label: '프렌차이즈 간담회(계모임)',
       },
-      {
-        key: 'reactTrend',
-        label: 'sidebar.reactTrend',
-      },
-      {
-        key: 'frappeChart',
-        label: 'sidebar.frappeChart',
-      },
-      // {
-      //   key: 'echart',
-      //   label: 'sidebar.eChart'
-      // }
     ],
   },
   {
     key: 'Forms',
-    label: 'sidebar.forms',
+    label: '개인 설정',
     leftIcon: 'ion-android-mail',
     children: [
       {
         key: 'InputField',
-        label: 'sidebar.input',
+        label: '회원정보 수정',
       },
       {
         key: 'editor',
-        label: 'sidebar.editor',
-      },
-      {
-        key: 'FormsWithValidation',
-        label: 'sidebar.formsWithValidation',
-      },
-      {
-        key: 'progress',
-        label: 'sidebar.progress',
-      },
-      {
-        key: 'button',
-        label: 'sidebar.button',
-      },
-      {
-        key: 'tab',
-        label: 'sidebar.tab',
-      },
-      {
-        key: 'checkbox',
-        label: 'sidebar.checkbox',
-      },
-      {
-        key: 'radiobox',
-        label: 'sidebar.radiobox',
-      },
-      {
-        key: 'selectbox',
-        label: 'sidebar.selectbox',
-      },
-      {
-        key: 'transfer',
-        label: 'sidebar.transfer',
-      },
-      {
-        key: 'autocomplete',
-        label: 'sidebar.autocomplete',
-      },
-    ],
-  },
-  // {
-  //   key: 'gridLayout',
-  //   label: 'sidebar.boxOptions',
-  //   leftIcon: 'ion-cube'
-  // },
-  {
-    key: 'uielements',
-    label: 'sidebar.uiElements',
-    leftIcon: 'ion-leaf',
-    children: [
-      {
-        key: 'op_badge',
-        label: 'sidebar.badge',
-      },
-      {
-        key: 'op_card',
-        label: 'sidebar.card2',
-      },
-      {
-        key: 'op_carousel',
-        label: 'sidebar.corusel',
-      },
-      {
-        key: 'op_collapse',
-        label: 'sidebar.collapse',
-      },
-      {
-        key: 'op_popover',
-        label: 'sidebar.popover',
-      },
-      {
-        key: 'op_tooltip',
-        label: 'sidebar.tooltip',
-      },
-      {
-        key: 'op_tag',
-        label: 'sidebar.tag',
-      },
-      {
-        key: 'op_timeline',
-        label: 'sidebar.timeline',
-      },
-      {
-        key: 'dropdown',
-        label: 'sidebar.dropdown',
-      },
-      {
-        key: 'pagination',
-        label: 'sidebar.pagination',
-      },
-      {
-        key: 'rating',
-        label: 'sidebar.rating',
-      },
-      {
-        key: 'tree',
-        label: 'sidebar.tree',
-      },
-    ],
-  },
-  {
-    key: 'advancedUielements',
-    label: 'sidebar.advancedElements',
-    leftIcon: 'ion-flash',
-    children: [
-      {
-        key: 'reactDates',
-        label: 'sidebar.reactDates',
-      },
-      {
-        key: 'codeMirror',
-        label: 'sidebar.codeMirror',
-      },
-      {
-        key: 'uppy',
-        label: 'sidebar.uppy',
-      },
-      {
-        key: 'dropzone',
-        label: 'sidebar.dropzone',
-      },
-    ],
-  },
-  {
-    key: 'feedback',
-    label: 'sidebar.feedback',
-    leftIcon: 'ion-thumbsup',
-    children: [
-      {
-        key: 'alert',
-        label: 'sidebar.alert',
-      },
-      {
-        key: 'modal',
-        label: 'sidebar.modal',
-      },
-      {
-        key: 'message',
-        label: 'sidebar.message',
-      },
-      {
-        key: 'notification',
-        label: 'sidebar.notification',
-      },
-      {
-        key: 'popConfirm',
-        label: 'sidebar.popConfirm',
-      },
-      {
-        key: 'spin',
-        label: 'sidebar.spin',
+        label: '모임 신청하기',
       },
     ],
   },
   {
     key: 'table',
-    label: 'sidebar.tables',
+    label: '사용자 페이지',
     leftIcon: 'ion-android-menu',
     children: [
       {
         key: 'table_ant',
-        label: 'sidebar.antTables',
+        label: '나의 현황',
       },
     ],
   },
-  {
-    key: 'pages',
-    label: 'sidebar.pages',
-    leftIcon: 'ion-document-text',
-    children: [
-      {
-        key: '404',
-        label: 'sidebar.404',
-        withoutDashboard: true,
-      },
-      {
-        key: '500',
-        label: 'sidebar.500',
-        withoutDashboard: true,
-      },
-      {
-        key: 'signin',
-        label: 'sidebar.signIn',
-        withoutDashboard: true,
-      },
-      {
-        key: 'signup',
-        label: 'sidebar.signUp',
-        withoutDashboard: true,
-      },
-      {
-        key: 'forgotpassword',
-        label: 'sidebar.forgotPw',
-        withoutDashboard: true,
-      },
-      {
-        key: 'resetpassword',
-        label: 'sidebar.resetPw',
-        withoutDashboard: true,
-      },
-      // {
-      //   key: 'comingSoon',
-      //   label: 'sidebar.comingSoon',
-      //    withoutDashboard: true
-      // }
-    ],
-  },
-  ...getDevSidebar,
 ];
 export default options;
