@@ -1,9 +1,9 @@
 
 const options = [
     {
-        key: 'dashboard',
+        key: '',
         label: '메인 화면',
-        leftIcon: 'ion-alert',
+        leftIcon: 'ion-bookmark',
       },
   {
     key: 'charts',

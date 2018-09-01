@@ -1,9 +1,45 @@
+import _ from 'lodash';
 
+// import customerData from '../../data/Customer';
+// import guildData from '../../data/Guild';
+// import fundData from '../../data/Fund';
+// import fundLogsData from '../../data/FundLogs';
+// import customerLogsData from '../../data/CustomerLogs';
 
-const tableData = 
+// var newfundLogData = [];
+// var newCustomerLogData = [];
+
+// var resultLogData = [];
+
+// customerID는 1이고, 소속된 guildId도 1임
+// 소속된 펀드 id는
+// _.forEach(fundLogsData, (fundLog, fundLogKey)=> {
+//   if (fundLog.guildIdKey === 1) {  // 1번이 본인임
+//     newfundLogData.push(fundLog);
+//   }
+// });
+
+// _.forEach(customerLogsData, (customerLog, customerLogKey)=> {
+//   if (customerLog.guildIdKey === 1) {  // 1번이 본인임
+//     let agreement = customerLog.transactionMoney ? JSON.parse(customerLog.transactionMoney) : "";
+    
+//     let obj = {
+//           "date": customerLog.date,
+//           "behavior": customerLog.behavior,
+//           "transactionMoney": customerLog.transactionMoney + "원",
+//           "customerIdKey": customerData[customerLog.customerIdKey],
+//           "comment": customerLog.behavior,
+//           "agreement": agreement
+//         };
+
+//     newCustomerLogData.push(customerLog);
+//   }
+// });
+
+var tableData =
   [{
-    "id": 0,
-    "key": 0,
+    "date": 0,
+    "behavior": 0,
     "requestAt": "2018-08-22, 16:26",
     "requestType": "출자금증액",
     "fundingPrice": "50,000",
@@ -70,8 +106,7 @@ const tableData =
     "personKey": "ect.",
     "reason": "ect.",
     "agreement": "동의"
-  },
-
+  }
 ];
 
 const sortOption = {};

@@ -1,88 +1,140 @@
-// const API_URL = "http://13.77.161.105:3000/api/Fund";
+import fundData from '../../data/Fund';
 
-// let tableData = 
-//   [{
-//     "fundNameKey": "치킨프렌차이즈 계모임",
-//     "initialTotalPrice": "150,000",
-//     "currentTotalPrice": "1,200,000",
-//     "startedAt": "2017-09-01",
-//     "expiredAt": "2018-09-01",
-//   },
-//   {
-//     "id": 1,
-//     "key": 1,
-//     "fundNameKey": "전주시 어머니회",
-//     "initialTotalPrice": "50,000",
-//     "currentTotalPrice": "800,000",
-//     "startedAt": "2016-09-01",
-//     "expiredAt": "2020-09-01",
-//   },
-//   {
-//     "id": 2,
-//     "key": 2,
-//     "fundNameKey": "전주이씨 종친회",
-//     "initialTotalPrice": "500,000",
-//     "currentTotalPrice": "5,800,000",
-//     "startedAt": "2010-10-01",
-//     "expiredAt": "2020-10-01",
-//   },
-//   {
-//     "id": 3,
-//     "key": 3,
-//     "fundNameKey": "ect.",
-//     "initialTotalPrice": "150,000",
-//     "currentTotalPrice": "1,200,000",
-//     "startedAt": "2017-09-01",
-//     "expiredAt": "2018-09-01",
-//   },
-//   {
-//     "id": 4,
-//     "key": 4,
-//     "fundNameKey": "ect.",
-//     "initialTotalPrice": "150,000",
-//     "currentTotalPrice": "1,200,000",
-//     "startedAt": "2017-09-01",
-//     "expiredAt": "2018-09-01",
-//   },
-//   {
-//     "id": 5,
-//     "key": 5,
-//     "fundNameKey": "ect.",
-//     "initialTotalPrice": "150,000",
-//     "currentTotalPrice": "1,200,000",
-//     "startedAt": "2017-09-01",
-//     "expiredAt": "2018-09-01",
-//   },
-//   {
-//     "id": 6,
-//     "key": 6,
-//     "fundNameKey": "ect.",
-//     "initialTotalPrice": "150,000",
-//     "currentTotalPrice": "1,200,000",
-//     "startedAt": "2017-09-01",
-//     "expiredAt": "2018-09-01",
-//   },
-//   {
-//     "id": 7,
-//     "key": 7,
-//     "fundNameKey": "ect.",
-//     "initialTotalPrice": "150,000",
-//     "currentTotalPrice": "1,200,000",
-//     "startedAt": "2017-09-01",
-//     "expiredAt": "2018-09-01",
-//   }];
+const API_URL = "http://13.77.161.105:3000/api/Fund";
+
+// async function getAPIFund() {
+//   let result;
+  
+//   try {
+//     let response = await fetch(
+//       API_URL
+//     );
+//     let responseJson = await response.json();
+//     return responseJson;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+// `${API_URL}&q=${encodeURIComponent(searcText)}${pageToken}`
+
+// const onGetFundRequest = async (filter) => {
+  
+//   try {
+//     let res = await fetch(
+//       `${API_URL}`
+//     );
+  
+//     if (res.status == 200) {
+//       let json = await res.json();
+//       return json;
+//     }
+//   } catch (err) {
+//     alert(err);
+//   }
+// }
+
+// const tableData = onGetFundRequest();
+
+var tableData = fundData;
+  // [{
+  //   "id": 0,
+  //   "key": 0,
+  //   "meetingKey": "치킨프렌차이즈 계모임",
+  //   "fundingPrice": "150,000",
+  //   "totalPrice": "1,200,000",
+  //   "startingDate": "2017-09-01",
+  //   "endingDate": "2018-09-01",
+  // },
+  // {
+  //   "id": 1,
+  //   "key": 1,
+  //   "meetingKey": "전주시 어머니회",
+  //   "fundingPrice": "50,000",
+  //   "totalPrice": "800,000",
+  //   "startingDate": "2016-09-01",
+  //   "endingDate": "2020-09-01",
+  // },
+  // {
+  //   "id": 2,
+  //   "key": 2,
+  //   "meetingKey": "전주이씨 종친회",
+  //   "fundingPrice": "500,000",
+  //   "totalPrice": "5,800,000",
+  //   "startingDate": "2010-10-01",
+  //   "endingDate": "2020-10-01",
+  // },
+  // {
+  //   "id": 3,
+  //   "key": 3,
+  //   "meetingKey": "ect.",
+  //   "fundingPrice": "150,000",
+  //   "totalPrice": "1,200,000",
+  //   "startingDate": "2017-09-01",
+  //   "endingDate": "2018-09-01",
+  // },
+  // {
+  //   "id": 4,
+  //   "key": 4,
+  //   "meetingKey": "ect.",
+  //   "fundingPrice": "150,000",
+  //   "totalPrice": "1,200,000",
+  //   "startingDate": "2017-09-01",
+  //   "endingDate": "2018-09-01",
+  // },
+  // {
+  //   "id": 5,
+  //   "key": 5,
+  //   "meetingKey": "ect.",
+  //   "fundingPrice": "150,000",
+  //   "totalPrice": "1,200,000",
+  //   "startingDate": "2017-09-01",
+  //   "endingDate": "2018-09-01",
+  // },
+  // {
+  //   "id": 6,
+  //   "key": 6,
+  //   "meetingKey": "ect.",
+  //   "fundingPrice": "150,000",
+  //   "totalPrice": "1,200,000",
+  //   "startingDate": "2017-09-01",
+  //   "endingDate": "2018-09-01",
+  // },
+  // {
+  //   "id": 7,
+  //   "key": 7,
+  //   "meetingKey": "ect.",
+  //   "fundingPrice": "150,000",
+  //   "totalPrice": "1,200,000",
+  //   "startingDate": "2017-09-01",
+  //   "endingDate": "2018-09-01",
+  // }];
+
+let getFundRequest = async () => {
+  const res = await fetch(API_URL);
+  const data = await res.json();
+  return data;
+} 
+
+// getFundRequest().then((data) => {
+//   tableData = data;
+//   // console.log(tableData);
+// });
 
 const sortOption = {};
 class fakeData {
-  constructor(data, size) {
-    this.tableData = data;
-    this.size = size || this.tableData.length || 2000;
+  constructor(size) {
+    this.init();
+    this.size = size || tableData.length || 2000;
     this.datas = [];
     this.sortKey = null;
     this.sortDir = null;
   }
+  async init() {
+    tableData = await getFundRequest();
+    console.log(tableData);
+  }
   dataModel(index) {
-    return this.tableData[index];
+    return tableData[index];
   }
   getObjectAt(index) {
     if (index < 0 || index > this.size) {

@@ -59,17 +59,6 @@ class ThemeSwitcher extends Component {
           />
           <LanguageSwitcher />
         </div>
-
-        <div className="purchaseBtnWrapper">
-          <a
-            href="https://themeforest.net/item/isomorphic-react-redux-admin-dashboard/20262330?ref=redqteam"
-            className="purchaseBtn"
-            style={styleButton}
-          >
-            <IntlMessages id="themeSwitcher.purchase" />
-          </a>
-        </div>
-
         <button
           type="primary"
           className="switcherToggleBtn"

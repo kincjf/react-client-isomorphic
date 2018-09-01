@@ -219,6 +219,14 @@ const routes = [
     component: asyncComponent(() => import('../Charts/reactChart2')),
   },
   {
+    path: 'ReactChart3',
+    component: asyncComponent(() => import('../Charts/reactChart3')),
+  },
+  {
+    path: 'ReactChart4',
+    component: asyncComponent(() => import('../Charts/reactChart4')),
+  },
+  {
     path: 'pagination',
     component: asyncComponent(() =>
       import('../Uielements/Pagination/pagination')
